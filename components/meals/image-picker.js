@@ -18,6 +18,7 @@ const ImagePicker = ({ label, name }) => {
     const file = event.target.files[0];
 
     if (!file) {
+      setPickedImage(null);
       return;
     }
 
@@ -48,10 +49,11 @@ const ImagePicker = ({ label, name }) => {
           className={classes.input}
           type="file"
           id={name}
-          accept="image/png image/jpeg"
+          accept="image/png, image/jpeg"
           name={name}
           ref={imageInput}
           onChange={handleImageChange}
+          required
         />
         <button
           className={classes.button}
