@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useFormState } from "react-dom";
 import classes from "./page.module.css";
 
 import { shareMeal } from "@/data/action";
@@ -9,7 +9,7 @@ import ImagePicker from "@/components/meals/image-picker";
 import MealsFormSubmit from "@/components/meals/meals-form-submit";
 
 const ShareMealPage = () => {
-  const [state, actionState] = useActionState(shareMeal, { message: null });
+  const [state, actionState] = useFormState(shareMeal, { message: null });
 
   return (
     <>

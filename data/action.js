@@ -28,7 +28,7 @@ const shareMeal = async (prevState, formData) => {
     !meal.image ||
     meal.image.size === 0
   ) {
-    throw new Error("Invalid Input");
+    return { message: "Invalid Input." };
   }
 
   await saveMeal(meal);
