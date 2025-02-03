@@ -5,10 +5,10 @@ import classes from "./page.module.css";
 import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals } from "@/data/meals";
 
-async function Meals() {
+const Meals = async () => {
   const meals = await getMeals();
   return <MealsGrid meals={meals} />;
-}
+};
 
 const MealsPage = async () => {
   return (
