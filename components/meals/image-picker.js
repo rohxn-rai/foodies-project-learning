@@ -6,7 +6,7 @@ import classes from "./image-picker.module.css";
 import Image from "next/image";
 
 const ImagePicker = ({ label, name }) => {
-  const [pickedImage, setPickedImage] = useState();
+  const [pickedImage, setPickedImage] = useState(null);
 
   const imageInput = useRef();
 
@@ -18,7 +18,6 @@ const ImagePicker = ({ label, name }) => {
     const file = event.target.files[0];
 
     if (!file) {
-      setPickedImage(null);
       return;
     }
 
@@ -49,7 +48,7 @@ const ImagePicker = ({ label, name }) => {
           className={classes.input}
           type="file"
           id={name}
-          accept="image/png, image/jpeg"
+          accept="image/png, image/jpeg, image/webp"
           name={name}
           ref={imageInput}
           onChange={handleImageChange}
